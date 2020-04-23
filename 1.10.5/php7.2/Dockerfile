@@ -22,6 +22,7 @@ RUN set -eux; \
     icu-dev \
     gettext-dev \
     libsodium-dev \
+    bzip2-dev \
   ; \
   docker-php-ext-install -j "$(nproc)" \
     opcache \
@@ -32,6 +33,7 @@ RUN set -eux; \
     gettext \
     mysqli \
     pdo_mysql \
+    bz2 \
   ; \
   docker-php-ext-enable \
     opcache \
@@ -42,6 +44,7 @@ RUN set -eux; \
     gettext \
     mysqli \
     pdo_mysql \
+    bz2 \
   ; \
   runDeps="$( \
     scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
